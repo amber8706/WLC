@@ -1,0 +1,42 @@
+This help is designed for a brief description of classes, properties, methods, as well as the principle of operation of the WLC.
+
+1. General construction of the application.
+
+WCL consists of the "main class" TWindow, which provides common methods and properties for other classes, as well as the auxiliary class TWindowList, which stores a list of all application windows. In addition, there are common methods and functions that ensure the creation of windows, the launch and termination of the application.
+The first window added to the TWindowList becomes the main one. Usually, this happens when it is created, using the CreateWindow function. When the "Main Window" is destroyed, the application is automatically closed. You can change the "main window" using the MainWindow property of the TWindowList class.
+To start and terminate the application, use the "Run" and "Terminate" procedures. ATTENTION!: Calling the "Run" procedure starts a message cycle, which can only be interrupted by closing the "Main Window" or calling the "Terminate" procedure.
+
+1.1 Creating windows
+
+The general principle of creating windows is to use templates (array of strings). The template is a text description of the future window, visually indicating the location of the controls. The template consists of the following "control characters":
+
+"E" or "e" - in this place is placed Edit control
+"B" or "b" - in this place is placed Button control
+"R" or "r" - in this place is placed RadioButton control
+"C" or "c" - in this place is placed CheckBox control
+"S" or "s" - in this place is placed Static control
+"." (dot) - free space of window
+
+Thus, by specifying a certain symbol, you indicate thereby which control will be in this place. The size in pixels of each control is calculated based on the "CharSize" parameter of the "CreateWindow" function when creating a window. The difference in the case of the symbol is used to distinguish two different adjacent controls. Two identical symbols standing side by side set the dimensions of the future control. For example:
+
+.bb.
+.BB.
+
+If CharSize = 20, then this template should be read like this:
+
+Create a window with a width of 20*4 and a height of 20*2 (template size: 4 characters in width and 2 characters in height). Inside the window, place the button in the position: 
+Left = 20*2 (the first letter "b" comes second after the dot)
+Top = 20*1 (the first character "b" is in the first line)
+Width = 20*2 (because the adjacent characters have the same case and their total number is 2.)
+Height = 20*1 (second line under "b" do not contain "b")
+
+Also in the window, place the button in the position:
+Left = 20*2 (the first letter "B" comes second after the dot)
+Top = 20*2 (the first character "B" is in the second line)
+Width = 20*2 (because the adjacent characters have the same case and their total number is 2.)
+Height = 20*1 
+
+After setting the template, a "window mask" should be created based on it. The "window mask" is an array of characters prepared in advance for further processing. To do this, use the CreateMask procedure. After creating the mask, use it in the CreateWindow function to create a window. Masks will be combined if the CreateWindow function has been passed the name of an already existing window class created using CreateWindow. In this case, the window will not be created, but instead of creating a window, an existing window will be used, the name of which is passed in the ClassName parameter. Thus, using several different templates for one window, you can adjust any of their proportions by changing the CharSize parameter of CreateWindow function.
+
+
+(to be continued... maybe....)
