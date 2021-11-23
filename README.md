@@ -1,5 +1,5 @@
 # WLC
-Window Library Controls (WLC)  - this small library visual controls, contains "basic" controls: edit, button, radiobutton, checkbox, static and "window" for place this. This can be used for writing small applications and utilities. WLC contains sample application "MagicCalc" for demonstration this library.
+Window Library Controls (WLC)  - this small library visual controls for Delphi, contains "basic" controls: edit, button, radiobutton, checkbox, static and "window" for place this. This can be used for writing small applications and utilities. WLC contains sample application "MagicCalc" for demonstration this library.
 
 
 Simple app (One empty form without writing any code):
