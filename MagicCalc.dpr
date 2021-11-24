@@ -1,5 +1,5 @@
 program MagicCalc;
-{Example of a demo program showing how to use WCL
+{Example of a demo program showing how to use WLC
  LICENSE: GPLv2
  PROGRAMMER: Burshtin Nikolay - amber8706@mail.ru
  OS: Windows
