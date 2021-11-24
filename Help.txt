@@ -2,7 +2,7 @@ This help is designed for a brief description of classes, properties, methods, a
 
 1. General construction of the application.
 
-WCL consists of the "main class" TWindow, which provides common methods and properties for other classes, as well as the auxiliary class TWindowList, which stores a list of all application windows. In addition, there are common methods and functions that ensure the creation of windows, the launch and termination of the application.
+WLC consists of the "main class" TWindow, which provides common methods and properties for other classes, as well as the auxiliary class TWindowList, which stores a list of all application windows. In addition, there are common methods and functions that ensure the creation of windows, the launch and termination of the application.
 The first window added to the TWindowList becomes the main one. Usually, this happens when it is created, using the CreateWindow function. When the "Main Window" is destroyed, the application is automatically closed. You can change the "main window" using the MainWindow property of the TWindowList class.
 To start and terminate the application, use the "Run" and "Terminate" procedures. ATTENTION!: Calling the "Run" procedure starts a message cycle, which can only be interrupted by closing the "Main Window" or calling the "Terminate" procedure.
 
