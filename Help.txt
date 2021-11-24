@@ -38,5 +38,10 @@ Height = 20*1
 
 After setting the template, a "window mask" should be created based on it. The "window mask" is an array of characters prepared in advance for further processing. To do this, use the CreateMask procedure. After creating the mask, use it in the CreateWindow function to create a window. Masks will be combined if the CreateWindow function has been passed the name of an already existing window class created using CreateWindow. In this case, the window will not be created, but instead of creating a window, an existing window will be used, the name of which is passed in the ClassName parameter. Thus, using several different templates for one window, you can adjust any of their proportions by changing the CharSize parameter of CreateWindow function.
 
+1.2 Window management
+
+When creating a new window using TWindow.Create or the CreateWindow function, it is added to the list of application windows. You can access all application windows using the WindowList variable of the TWindowList class.
+The TWindowList class allows you to access all the windows of your application, search for the desired window, as well as set the "main window" - when you close it, the application will terminate.
+You can control the standard size values of window or control when creating it.  To do this, use the global variables stdWidth and stdHeight. Each call constructor TWindow.Create (as well as its heirs) using the values stdWidth and stdHeight for the default Width and Height.
 
 (to be continued... maybe....)
