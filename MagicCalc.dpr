@@ -103,7 +103,7 @@ begin
  edit.ReadOnly:=true;
 
  radioindex:=0;
- for i:= 0 to CalcForm.ChildCount do
+ for i:= 0 to CalcForm.ChildCount-1 do
   if CalcForm.GetChild(i) is TButton then
     if (CalcForm.GetChild(i) as TButton).Style=bsButton then
      CalcForm.GetChild(i).OnClick:=ButtonClick else
