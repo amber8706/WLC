@@ -714,7 +714,7 @@ begin
    Result.Height:=Height;
  end
  else
- begin //åñëè îêíî ñ èìåíåì ClassName ñóùåñòâóåò - èñïîëüçóåì åãî (êîìáèíèðóåì ìàñêè)
+ begin //if a window with the name ClassName exists, we use it (combine masks)
    if Result.Width<Width then Result.Width:=Width;
    if Result.Height<Height then Result.Height:=Height;
  end;
