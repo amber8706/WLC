@@ -94,9 +94,6 @@ end;
      TWindowsArray = array of TWindow;
 
 type TStatic=class(TWindow)
- private
-   property Focused;
-   property OnClose;
  public
    constructor Create(AParent:TWindow=nil;ACaption:String='');
 end;
@@ -111,8 +108,6 @@ type TButton=class(TWindow)
     procedure SetChecked(const Value: Boolean);
     procedure DoClick;override;
     procedure DoCheck;
-
-    property OnClose;
  public
     property AutoChecked:Boolean read FAutoChecked write FAutoChecked;
     property RadioGroup:Byte read FRadioGroup write FRadioGroup;
@@ -134,7 +129,6 @@ type TEdit=class(TWindow)
    function GetLineCount: Integer;
    function GetAlign: TTextAlign;
    procedure SetAlign(const Value: TTextAlign);
-   property OnClose;
  public
    procedure RecreateWnd(NewStyle :nativeint);
    constructor Create(AParent:TWindow=nil;AText:String='');
@@ -720,7 +714,7 @@ begin
    Result.Height:=Height;
  end
  else
- begin //если окно с именем ClassName существует - используем его (комбинируем маски)
+ begin //ГҐГ±Г«ГЁ Г®ГЄГ­Г® Г± ГЁГ¬ГҐГ­ГҐГ¬ ClassName Г±ГіГ№ГҐГ±ГІГўГіГҐГІ - ГЁГ±ГЇГ®Г«ГјГ§ГіГҐГ¬ ГҐГЈГ® (ГЄГ®Г¬ГЎГЁГ­ГЁГ°ГіГҐГ¬ Г¬Г Г±ГЄГЁ)
    if Result.Width<Width then Result.Width:=Width;
    if Result.Height<Height then Result.Height:=Height;
  end;
