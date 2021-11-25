@@ -46,9 +46,9 @@ You can control the standard size values of window or control when creating it. 
 
 1.3 Message handling
 
-WCL controls contain the "main event". The "main event" is an event that depends on the type of control. For a TButton and TStatic is a OnClick event. For TEdit is OnChange event. You can set the "main event" of each control when creating a window using the MainEvent parameter of the CreateWindow function.
+WLC controls contain the "main event". The "main event" is an event that depends on the type of control. For a TButton and TStatic is a OnClick event. For TEdit is OnChange event. You can set the "main event" of each control when creating a window using the MainEvent parameter of the CreateWindow function.
 
-WLC provides default handling of the following events (WCL actions on incoming Windows message):
+WLC provides default handling of the following events (WLC actions on incoming Windows message):
 WM_CLOSE - when the window or control is closed, the OnClose event is called.
 WM_DESTROY - The Destroy destructor is called.
 WM_LBUTTONUP - The OnClick event is called.
