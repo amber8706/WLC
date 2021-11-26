@@ -904,7 +904,7 @@ begin
   SendMessage(Handle,BM_SETCHECK,BST_CHECKED,0) else
   SendMessage(Handle,BM_SETCHECK,BST_UNCHECKED,0);
 
-  DoCheck;
+  If (Style<>bsCheckBox)and(bef<>Value) then DoCheck;
   If Value<>bef then inherited DoClick;
 
 end;
