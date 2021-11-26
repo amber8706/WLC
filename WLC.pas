@@ -181,7 +181,7 @@ Procedure CreateMask(Template:array of string; var Mask: TWindowMask);
 
 
 
-Procedure Run;
+Procedure Run(TerminateOnEnd:Boolean = true);
 Procedure Terminate;
 implementation
 
@@ -624,7 +624,7 @@ end;
 
 { Custom }
 
-Procedure Run;
+Procedure Run(TerminateOnEnd:Boolean);
  var msg:tagMSG;
 begin
 
@@ -634,7 +634,7 @@ begin
   DispatchMessage(msg);
  end;
 
- Terminate;
+ If TerminateOnEnd then Terminate;
 end;
 
 Procedure Terminate;
