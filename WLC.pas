@@ -17,6 +17,12 @@ unit WLC;
  STATIC (S, s)
 }
 
+{$IFDEF FPC}
+  {$MODE Delphi}
+  {$MACRO ON}
+  {$DEFINE CompilerVersion := 7}
+{$ENDIF}
+
 interface
 uses Windows, Messages, SysUtils;
 
